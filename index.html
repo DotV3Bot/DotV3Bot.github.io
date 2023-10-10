@@ -21,8 +21,12 @@
         var gid = getParameterByName('gid');
         console.log('pid:', pid);
         console.log('gid:', gid);
-        var robloxURL = 'roblox://experiences/start?placeId=' + pid + '&gameInstanceId=' + gid;
-        window.location.href = robloxURL;
+        var robloxURLpc = 'roblox://experiences/start?placeId=' + pid + '&gameInstanceId=' + gid;
+        var robloxURLmobile = 'robloxmobile://placeID=' + pid + '&gameInstanceId=' + gid;
+        window.location.replace(robloxURLpc);
+        setTimeout(function() {
+                        window.location.replace(robloxURLmobile)
+            }, 5000)
     </script>
 </body>
 </html>
